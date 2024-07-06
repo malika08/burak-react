@@ -3,36 +3,40 @@ import "../css/app.css";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { RippleBadge } from "./MaterialTheme/styled";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-import { Users } from "./screens/Users";
-import { About } from "./screens/About";
+
+import { HomePage } from "./screens/homePage";
+import { ProductsPage } from "./screens/productsPage";
+import { OrdersPage } from "./screens/orders";
+import { UserPage } from "./screens/userPage";
 
 function App() {
   return (
-    <Router>
+    <div>
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Home Page</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/products">Products Page</Link>
           </li>
           <li>
-            <Link to="/users">Users</Link>
+            <Link to="/orders">Orders Page</Link>
+          </li>
+          <li>
+            <Link to="/member-page">User Page</Link>
           </li>
         </ul>
       </nav>
       <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Users />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Router>
-  );
-}
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/orders" element={<OrdersPage />} />
+        <Route path="/member-page" element={<UserPage />} />
 
-function Home() {
-  return <Container>Home</Container>;
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
