@@ -9,16 +9,17 @@ import {
   useLocation,
 } from "react-router-dom";
 
-import { HomePage } from "./screens/homePage";
-import { ProductsPage } from "./screens/productsPage";
-import { OrdersPage } from "./screens/orders";
-import { UserPage } from "./screens/userPage";
-import { HomeNavbar } from "./components/headers/HomeNavbar";
-import { OtherNavbar } from "./components/headers/OtherNavbar";
+import HomePage from "./screens/homePage";
+import ProductsPage from "./screens/productsPage";
+import OrdersPage from "./screens/orders";
+import UserPage from "./screens/userPage";
+import HelpPage from "./screens/help";
+import HomeNavbar from "./components/headers/HomeNavbar";
+import OtherNavbar from "./components/headers/OtherNavbar";
 import Footer from "./components/footer";
 import "../css/app.css";
 import "../css/navbar.css";
-import { HelpPage } from "./screens/help";
+import "../css/footer.css";
 
 function App() {
   const location = useLocation();
