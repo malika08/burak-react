@@ -11,7 +11,7 @@ import {
 
 import HomePage from "./screens/homePage";
 import ProductsPage from "./screens/productsPage";
-import OrdersPage from "./screens/orders";
+import OrdersPage from "./screens/ordersPage";
 import UserPage from "./screens/userPage";
 import HelpPage from "./screens/help";
 import HomeNavbar from "./components/headers/HomeNavbar";

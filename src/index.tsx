@@ -8,7 +8,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import reportWebVitals from "./reportWebVitals";
 import "./css/index.css";
 import theme from "./app/MaterialTheme";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
@@ -21,7 +21,6 @@ root.render(
           <App />
         </Router>
       </ThemeProvider>
-      ,
     </Provider>
   </React.StrictMode>
 );
