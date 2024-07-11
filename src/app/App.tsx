@@ -5,7 +5,7 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
-  Routes,
+  Switch,
   useLocation,
 } from "react-router-dom";
 
@@ -27,14 +27,29 @@ function App() {
   return (
     <>
       {location.pathname === "/" ? <HomeNavbar /> : <OtherNavbar />}
-      <Routes>
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/orders" element={<OrdersPage />} />
-        <Route path="/member-page" element={<UserPage />} />
-        <Route path="/help" element={<HelpPage />} />
+      <Switch>
+        <Route path="/products">
+          {" "}
+          <ProductsPage />{" "}
+        </Route>
+        <Route path="/orders">
+          {" "}
+          <OrdersPage />{" "}
+        </Route>
+        <Route path="/member-page">
+          {" "}
+          <UserPage />{" "}
+        </Route>
+        <Route path="/help">
+          {" "}
+          <HelpPage />{" "}
+        </Route>
 
-        <Route path="/" element={<HomePage />} />
-      </Routes>
+        <Route path="/">
+          {" "}
+          <HomePage />{" "}
+        </Route>
+      </Switch>
       <Footer />
     </>
   );
