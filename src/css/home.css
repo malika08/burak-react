@@ -464,6 +464,7 @@
 }
 
 .homepage .cards-frame .member-nickname {
+  margin-left: 50%;
   font-family: "Roboto Serif";
   font-style: normal;
   font-weight: 600;
