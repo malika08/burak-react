@@ -87,17 +87,17 @@
 /** ASOSIY QISM**/
 
 .products-page .products .product-wrapper {
-  position: relative;
-  margin-left: 15px;
+  margin-left: 25px;
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-left: -30px;
 }
 
 .products-page .products .product-wrapper .product-card {
+  position: relative;
   width: 273px;
   height: 361px;
   margin: 0 auto;
@@ -115,9 +115,10 @@
   display: block;
   max-width: 100%;
   height: auto;
-  z-index: 1;
+  z-index: 100;
 }
-.products-page .products .product-img:before {
+
+.product-card .product-img:before {
   border-radius: 0px 50px 0px 0px;
   content: "";
   opacity: 0;
@@ -131,16 +132,16 @@
   z-index: 2;
 }
 
-.products-page .products .product-img:hover:before {
+.product-card .product-img:hover:before {
   border-radius: 0px 50px 0px 0px;
   opacity: 0;
 }
 
-.products-page .products .product-img:hover .shop-btn {
+.product-card .product-img:hover .shop-btn {
   opacity: 1;
 }
 
-.products-page .products .product-img:hover .view-btn {
+.product-card .product-img:hover .view-btn {
   opacity: 1;
 }
 
@@ -268,6 +269,7 @@
 
 .products-page .products .dishes-filter-section {
   margin-top: 65px;
+  margin-bottom: 40px;
   width: 90%;
   display: flex;
   flex-direction: row;
@@ -289,8 +291,8 @@
 
 .products-page .products .list-category-section .product-category {
   justify-content: center;
-  /* align-items: center;
-  width: 100px; */
+  align-items: center;
+  width: 100px;
 }
 
 .products-page .products .list-category-section .category-main {
@@ -301,7 +303,6 @@
 }
 
 .category-main .order {
-  /* padding: 15px 30px; */
   border: none;
   border-radius: 10px;
   cursor: pointer;

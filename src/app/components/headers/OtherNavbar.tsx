@@ -19,7 +19,7 @@ export default function OtherNavbar() {
           </Box>
           <Stack className="links">
             <Box className={"hover-line"}>
-              <NavLink to="/" activeClassName="underline">
+              <NavLink to="/" activeClassName={"underline"}>
                 Home
               </NavLink>
             </Box>
