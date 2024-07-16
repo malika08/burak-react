@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
 
 export default function OtherNavbar() {
-  const authMember = null;
+  const authMember = true;
   return (
     <div className="other-navbar">
       <Container className="navbar-container">
@@ -19,9 +19,7 @@ export default function OtherNavbar() {
           </Box>
           <Stack className="links">
             <Box className={"hover-line"}>
-              <NavLink to="/" activeClassName={"underline"}>
-                Home
-              </NavLink>
+              <NavLink to="/">Home</NavLink>
             </Box>
             <Box className={"hover-line"}>
               <NavLink to="/products" activeClassName="underline">

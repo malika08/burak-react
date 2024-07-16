@@ -29,25 +29,20 @@ function App() {
       {location.pathname === "/" ? <HomeNavbar /> : <OtherNavbar />}
       <Switch>
         <Route path="/products">
-          {" "}
-          <ProductsPage />{" "}
+          <ProductsPage />
         </Route>
         <Route path="/orders">
-          {" "}
-          <OrdersPage />{" "}
+          <OrdersPage />
         </Route>
         <Route path="/member-page">
-          {" "}
-          <UserPage />{" "}
+          <UserPage />
         </Route>
         <Route path="/help">
-          {" "}
-          <HelpPage />{" "}
+          <HelpPage />
         </Route>
 
         <Route path="/">
-          {" "}
-          <HomePage />{" "}
+          <HomePage />
         </Route>
       </Switch>
       <Footer />
