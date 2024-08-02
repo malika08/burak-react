@@ -15,7 +15,6 @@ import { createSelector } from "reselect";
 import { retrievePopularDishes } from "./selector";
 import { Product } from "../../../lib/types/product";
 import { serverApi } from "../../../lib/config";
-import { log } from "console";
 
 const popularDishesRetriver = createSelector(
   retrievePopularDishes,
