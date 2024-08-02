@@ -13,6 +13,8 @@ import { createSelector } from "reselect";
 import { setPopularDishes } from "./slice";
 import { retrievePopularDishes } from "./selector";
 import { Product } from "../../../lib/types/product";
+import ProductService from "../../services/ProductService";
+import { ProductCollection } from "../../../lib/enums/product.enum";
 
 const actionDispatch = (dispatch: Dispatch) => ({
   setPopularDishes: (data: Product[]) => dispatch(setPopularDishes(data)),
@@ -30,7 +32,19 @@ export default function HomePage() {
 
   useEffect(() => {
     //backend server data request => Data
-    //slice: Data => Store
+    const product = new ProductService();
+    product
+      .getProducts({
+        page: 1,
+        limit: 4,
+        order: "productViews",
+        productCollection: ProductCollection.DISH,
+      })
+      .then((data) => {
+        console.log("data passed here:", data);
+        setPopularDishes(data);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   return (
