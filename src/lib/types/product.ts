@@ -22,6 +22,7 @@ export interface Product {
 }
 
 export interface ProductInquiry {
+  _id?: string;
   order: string;
   page: number;
   limit: number;
