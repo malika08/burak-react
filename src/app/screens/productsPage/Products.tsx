@@ -69,9 +69,11 @@ export default function Products() {
 
   useEffect(() => {
     if (searchText === "") {
-      (productSearch.search = ""), setProductSearch({ ...productSearch });
+      productSearch.search = "";
+      setProductSearch({ ...productSearch });
     }
   }, [searchText]);
+
   /** Handlers */
 
   const searchCollectionHandler = (collection: ProductCollection) => {
