@@ -128,7 +128,7 @@ export default function ProcessOrders(props: ProcessOrdersProps) {
               justifyContent={"center"}
             >
               <img
-                src={"/public/icons/noimage-list.svg"}
+                src={"/icons/noimage-list.svg"}
                 style={{ width: 300, height: 300 }}
               />
             </Box>
