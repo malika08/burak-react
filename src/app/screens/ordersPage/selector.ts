@@ -5,14 +5,15 @@ const selectOrdersPage = (state: AppRootState) => state.ordersPage;
 
 export const retrievePausedOrders = createSelector(
   selectOrdersPage,
-  (OrdersPage) => OrdersPage.pausedOrders
+  (ordersPage) => ordersPage.pausedOrders
 );
 
 export const retrieveProcessOrders = createSelector(
   selectOrdersPage,
-  (OrdersPage) => OrdersPage.processOrders
+  (ordersPage) => ordersPage.processOrders
 );
-export const retrieveTopUsers = createSelector(
+
+export const retrieveFinishedOrders = createSelector(
   selectOrdersPage,
-  (OrdersPage) => OrdersPage.finishedOrders
+  (ordersPage) => ordersPage.finishedOrders
 );

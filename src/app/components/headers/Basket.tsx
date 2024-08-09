@@ -8,7 +8,10 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useHistory } from "react-router-dom";
 import { CartItem } from "../../../lib/types/search";
-import { serverApi } from "../../../lib/config";
+import { Messages, serverApi } from "../../../lib/config";
+import { useGlobal } from "../../hooks/useGlobal";
+import { sweetErrorHandling } from "../../../lib/sweetAlert";
+import OrderService from "../../services/OrderService";
 
 interface BasketProps {
   cartItems: CartItem[];
@@ -21,7 +24,7 @@ interface BasketProps {
 export default function Basket(props: BasketProps) {
   const { cartItems, onAdd, onDelete, onRemove, onDeleteAll } = props;
 
-  const authMember = null;
+  const { authMember, setOrderBuilder } = useGlobal();
   const history = useHistory();
   const itemPrice: number = cartItems.reduce(
     (a: number, c: CartItem) => a + c.quantity * c.price,
@@ -40,6 +43,23 @@ export default function Basket(props: BasketProps) {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const proceedOrderHandler = async () => {
+    try {
+      handleClose();
+      if (!authMember) throw new Error(Messages.error2);
+
+      const order = new OrderService();
+      await order.createOrder(cartItems);
+
+      onDeleteAll();
+      setOrderBuilder(new Date());
+      history.push("/orders");
+    } catch (err) {
+      console.log(err);
+      sweetErrorHandling(err).then();
+    }
   };
 
   return (
@@ -148,7 +168,11 @@ export default function Basket(props: BasketProps) {
               <span className={"price"}>
                 Total: ${totalPrice} ({itemPrice} +{shippingCost})
               </span>
-              <Button startIcon={<ShoppingCartIcon />} variant={"contained"}>
+              <Button
+                onClick={proceedOrderHandler}
+                startIcon={<ShoppingCartIcon />}
+                variant={"contained"}
+              >
                 Order
               </Button>
             </Box>
@@ -159,4 +183,7 @@ export default function Basket(props: BasketProps) {
       </Menu>
     </Box>
   );
+}
+function setOrderBuilder() {
+  throw new Error("Function not implemented.");
 }

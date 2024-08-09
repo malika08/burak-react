@@ -67,7 +67,7 @@ function App() {
           onRemove={onRemove}
           onDelete={onDelete}
           onDeleteAll={onDeleteAll}
-          setSignupOpen={setLoginOpen}
+          setSignupOpen={setSignupOpen}
           setLoginOpen={setLoginOpen}
           anchorEl={anchorEl}
           handleLogoutClick={handleLogoutClick}
